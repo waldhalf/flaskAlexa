@@ -16,7 +16,7 @@ def hello():
 def alexa():
     print("dans alexa__________________________________")
     event = request.get_json()
-    print event
+    print (event)
     req = event['request']
     
 
@@ -87,7 +87,7 @@ class Response(object):
                 }
             }
         print('Dans la response_________________________________')
-        print final_response
+        print (final_response)
         http_response = make_response(json.dumps(final_response))
         http_response.headers['Content-Type'] = 'application/json'
         return http_response
@@ -96,5 +96,5 @@ if __name__ == "__main__":
     # app.debug = True
     # app.run()
     port = int(os.getenv('PORT', 5000))
-    print "Starting app on port %d" % port
+    print ("Starting app on port %d" % port)
     app.run(debug=True, port=port, host='0.0.0.0')
